@@ -42,17 +42,24 @@ Run start on background, or run java -jar SOSWE.jar after compiling the source.
 There is few problems in stopping nodes. Current launch script cannot stop instance once it's started so user has to check the process id and kill the server process with `kill -9 {PID}`.
 
 ###Configuration
-Currently there are following settings available in configuration file:  
-clustering=TRUE|FALSE   # Should SOSWE try to form a cluster in current network?  
+The following settings are available in configuration file.
 
-clustername=soswecluster   # What is the clusters name this node is part of, useful if there is more than one cluster working in the same network.  
+\# Should SOSWE try to create or join a cluster in current network.  
+clustering=TRUE|FALSE   
 
-Port=9300   # Port which SOSWE will try to bind itself to
+\# Name of the cluster to create or join. There can be multiple clusters in the same network.  
+clustername=soswecluster   
 
-urlroot=soswe    # Root of url for REST calls so its like http://host:port/urlroot/restcall  
-msconfigfolder=default    #”default” or absolute path to xml file specifying the workflows if
-“default” is used then workflows.xml from SOSWE_HOME/config/ will be used.  
-msexecutables=default    #”default” or absolute path to folder containing different executables which are used by microservices. Developer can of course specify path inside each microservice but this way system becomes less portable. Microservice specific settings are always done by developer and they should be provided as
-parameters in workflow configuration.  
+\# The port into which SOSWE will try to bind itself.
+Port=9300   
+
+\# Root url for REST calls. E.g. http://host:port/urlroot/restcall  
+urlroot=soswe  
+
+\# 'default' or the absolute path to xml workflow configuration. Default uses SOSWE_HOME/config/.xml.  
+msconfigfolder=default      
+
+\# 'default' or the absolute path to directory containing the executables which are used by the microservices.  
+msexecutables=default    
 
 
