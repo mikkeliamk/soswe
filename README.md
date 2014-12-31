@@ -50,7 +50,7 @@ clustering=TRUE|FALSE
 \# Name of the cluster to create or join. There can be multiple clusters in the same network.  
 clustername=soswecluster   
 
-\# The port into which SOSWE will try to bind itself.
+\# The port into which SOSWE will try to bind itself.  
 Port=9300   
 
 \# Root url for REST calls. E.g. http://host:port/urlroot/restcall  
