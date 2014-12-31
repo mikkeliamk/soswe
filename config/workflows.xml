@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <workflows>
+        <workflow name="Workflow-test" defaultAction="yes" description="Test workflow to ping localhost and calculate avg time"> <!-- name = name of the workflow, defaultAction: yes | ask | no -->
+            <options> <!-- these options are mapped to workflow class as a hashmap with element name as a key and value of option attribute as value -->
+                <input option="/var/osa/files/" /> <!-- These options are available to all microservices in the workflow -->
+            </options>
+            <prompt question="Ping localhost?" />
+            <task name="Ping" important="false"/> <!-- name of the task, must be EXACTLY the same as java class containing the microservice (without the .java ending) -->
+            <prompt question="Do you want to calculate average from pings?" /> <!-- prompt is used when yes/no information is needed from user. It is only asked if defaultAction is ask -->
+            <task name="AvgCalculator" important="true"/>
+            <task name="Ping" important="false"/>
+            <task name="AvgCalculator" important="false"/>
+        </workflow>
+        <workflow name="Ping-test" defaultAction="yes" description="Test workflow to ping localhost" >
+            <task name="Ping" important="true" />
+        </workflow>
+    </workflows>
+</root>

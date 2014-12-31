@@ -1,0 +1,5 @@
+<service name="Ping"> <!-- name of the microservice, must be EXACTLY the same as java class containing the microservice (without the .java ending) -->
+    <description>Just a simple microservice test.</description> <!-- description of the microservice, not used anywhere (yet) -->
+    <exec>ping -c 3 localhost</exec> <!-- command which should be executed  -->
+    <log>/var/log/soswe/microservices/ping/</log> <!-- Where log file is generated -->
+</service>

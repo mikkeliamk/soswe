@@ -1,0 +1,5 @@
+<service name="AvgCalculator">
+    <description>Calculate average from arguments</description>
+    <exec>java -jar {pathToMicroservices}/calculateAvg.jar</exec> <!-- if you want to run jars deployed with program, replace {pathToMicroservices} with Osa.microserviceJarFolder in <microservice>.java  -->
+    <log>/var/log/soswe/microservices/AvgCalculator/</log> <!-- <date>.log is created into this dir -->
+</service>
